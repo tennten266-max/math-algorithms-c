@@ -1,0 +1,23 @@
+#include<stdio.h>
+//(a1)
+int funca1(int x, int y){
+    int i,sum=0;
+    if(x <= y){
+        for(i = x;i <= y;i++){
+            sum += i;
+        }
+    }else{
+        for(i = y;i <= x;i++){
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+int main(void){
+    int x,y;
+    printf("x=");scanf("%d",&x);
+    printf("y=");scanf("%d",&y);
+
+    printf("求める和=%d",funca1(x,y));
+}
