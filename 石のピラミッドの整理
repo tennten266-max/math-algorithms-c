@@ -25,4 +25,5 @@ int main(void){
 
     FOR_2D(n, sum += data[i][j] - pro[i][j]);
     printf("%d\n", sum);
+    return 0;
 }
