@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+#define FOR_2D(n, action) { \
+    for (int i = 0; i < (n); i++) { \
+        for (int j = 0; j < (n); j++) { \
+            action; \
+        } \
+    } \
+}
+
+int main(void){
+    int n, sum = 0;
+
+    scanf("%d", &n);
+    int pro[n][n], data[n][n];
+
+    FOR_2D(n,scanf("%d", &data[i][j]));
+
+    for (int k = (n + 1) / 2; k >= 0 ; k--){
+        FOR_2D(n,if (i == k || j == k || i == n-k -1|| j == n-k-1){
+                pro[i][j] = k + 1;
+                });
+    }
+    pro[(n-1)/2][(n-1)/2] = (n + 1) /2;
+
+    FOR_2D(n, sum += data[i][j] - pro[i][j]);
+    printf("%d\n", sum);
+}
